@@ -6,7 +6,7 @@ import numpy as np
 
 Geocoder = Geocoder(api_key='')
 crematory_df = pd.read_csv("crematories.csv", sep=",")
-crematory_df = crematory_df[0:10]
+crematory_df = crematory_df[10:20]
 
 Lat = []
 Long = []
@@ -14,7 +14,7 @@ Long = []
 for row in crematory_df['Address']:
 	results = Geocoder.geocode(row)
 	if results.valid_address == True:
-		cords = str(results.coordinates)
+		cords = str(results.coordinates).strip("()")
 		Lat.append(cords.split(',')[0])
 		Long.append(cords.split(',')[1])
 	else:
@@ -25,7 +25,7 @@ for row in crematory_df['Address']:
 crematory_df["Lat"] = Lat
 crematory_df["Long"] = Long
 
-crematory_df.head(5)
+crematory_df.head(10)
 
 
 #%%
