@@ -66,7 +66,7 @@ import time
 with open('apikey.txt') as f:
     api_k = f.readline()
     f.close
-	
+
 Geocoder = Geocoder(api_key=api_k)
 gmaps = GoogleMaps(key=api_k)
 
