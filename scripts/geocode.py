@@ -4,7 +4,7 @@ from pygeocoder import Geocoder
 import pandas as pd
 import numpy as np
 
-Geocoder = Geocoder(api_key='AIzaSyAcNy0IO12O-Uqdii8ZE36wPpxz6M-woEI')
+Geocoder = Geocoder(api_key='')
 crematory_df = pd.read_csv("crematories.csv", sep=",")
 crematory_df = crematory_df[0:10]
 
@@ -30,6 +30,7 @@ crematory_df.head(5)
 
 #%%
 
+#Test crap
 
 results = Geocoder.geocode("Paris, France")
 print(results[0].coordinates)
