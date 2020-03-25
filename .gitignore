@@ -12,3 +12,4 @@
 #Ignore Data Folder
 data/
 analysis/__pycache__/
+.txt*
