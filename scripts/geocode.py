@@ -76,7 +76,7 @@ Lat = []
 Long = []
 
 for idx, row in crematory_df.iterrows():
-	print(row[1])
+	# print(row[1])
 	results = Geocoder.geocode(row[1])
 	time.sleep(2)
 	if results.valid_address == True:
