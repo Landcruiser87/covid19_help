@@ -15,8 +15,8 @@ for row in crematory_df['Address']:
 	results = Geocoder.geocode(row)
 	if results.valid_address == True:
 		cords = str(results.coordinates).strip("()")
-		Lat.append(cords.split(',')[0])
-		Long.append(cords.split(',')[1])
+		Lat.append(float(cords.split(',')[0]))
+		Long.append(float(cords.split(',')[1]))
 	else:
 		print("There was an error with {}".format(row))
 		Lat.append(np.NAN)
