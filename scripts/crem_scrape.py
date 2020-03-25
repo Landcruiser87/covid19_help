@@ -1,18 +1,3 @@
-# #%% 
-# from bs4 import BeautifulSoup
-# import requests
-# import pprint
-
-# URL = 'http://www.us-funerals.com/funeral-homes/#.Xnf9OohKibh'
-
-# page = requests.get(URL)
-# soup = BeautifulSoup(page.content, 'html.parser')
-
-# results = soup.find(id='HomeBody')
-# print(results.prettify())
-
-#%%
-
 # importing libraries
 from bs4 import BeautifulSoup
 import urllib.request
@@ -26,10 +11,6 @@ except:
 	print("An error occured.")
 	
 soup = BeautifulSoup(page, 'html.parser')
-#match=soup.find('div',class_='content-body')
-#regex = re.compile('.*state.*')
-#content_lis = soup.find_all('li', attrs={'class': regex})
-#print(match)
 
 names = []
 address = []
@@ -60,14 +41,9 @@ for link in soup.findAll('a',attrs={'href': re.compile(".*state.*")} ):
 		print("problem with :" , url_city)
 		continue
 		
-
-
-
-# %%
-
 #%%
 
-filename = "death1.csv"
+filename = "death.csv"
 
 with open(filename, 'w') as f:
      writer = csv.writer(f, delimiter=',')
