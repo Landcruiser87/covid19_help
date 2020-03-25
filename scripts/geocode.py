@@ -4,7 +4,7 @@ from pygeocoder import Geocoder
 import pandas as pd
 import numpy as np
 
-Geocoder = Geocoder(api_key='')
+Geocoder = Geocoder(api_key='PUTYOAPIKEYHERE')
 crematory_df = pd.read_csv("crematories.csv", sep=",")
 crematory_df = crematory_df[10:20]
 
